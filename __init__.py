@@ -29,6 +29,9 @@ class OBJECT_OT_animationclear(bpy.types.Operator):
 	#bl_context = 'objectmode'
 	def execute(self, context):
 		#print("test");
+		context = bpy.context
+		for ob in context.selected_objects:
+			ob.animation_data_clear()
 		return {'FINISHED'}
 
 class OBJECT_OT_actionlist(bpy.types.Operator):
